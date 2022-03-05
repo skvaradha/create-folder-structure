@@ -1,0 +1,11 @@
+# created by virtualenv automatically
+.idea/
+venv/*
+.DS_Store
+*pycache*
+
+unittests.cfg
+
+
+logs/*
+
