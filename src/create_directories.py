@@ -1,6 +1,5 @@
 from datetime import datetime
 from common.utils import raise_error_message
-import os
 
 import click
 
