@@ -2,12 +2,13 @@ import unittest
 import datetime
 import os
 
-from src.common.utils import get_project_root
+from src.common.utils import get_project_root, delete_contents
 from src.tasks.create_directories_task import CreateDirectory
 
 
 class CreateDirectoryTests(unittest.TestCase):
     def test_create_directory_without_keep_file(self):
+        delete_contents(os.path.join(str(get_project_root()), 'test'))
         create_directory = CreateDirectory(start_date=datetime.datetime(2021, 12, 31),
                                            end_date=datetime.datetime(2022, 1, 2),
                                            root_path=os.path.join(str(get_project_root()), 'test'),
@@ -23,6 +24,7 @@ class CreateDirectoryTests(unittest.TestCase):
         self.assertEqual(7, total_dirs)
 
     def test_create_directory_with_keep_file(self):
+        delete_contents(os.path.join(str(get_project_root()), 'test'))
         create_directory = CreateDirectory(start_date=datetime.datetime(2021, 12, 31),
                                            end_date=datetime.datetime(2022, 1, 2),
                                            root_path=os.path.join(str(get_project_root()), 'test'),
