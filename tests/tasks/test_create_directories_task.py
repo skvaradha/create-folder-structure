@@ -16,7 +16,7 @@ class CreateDirectoryTests(unittest.TestCase):
         create_directory.execute()
 
         total_dirs = 0
-        for base, dirs, files in os.walk(str(get_project_root()) + '/test'):
+        for base, dirs, files in os.walk(os.path.join(str(get_project_root()), 'test')):
             for dir in dirs:
                 total_dirs += 1
 
